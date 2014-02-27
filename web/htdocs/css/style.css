@@ -1,0 +1,1041 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html,
+button,
+input,
+select,
+textarea {
+  color: #838383;
+}
+
+body {
+  background-color: #fff;
+  font-size: 0.875em;
+  line-height: 1.42857;
+}
+
+a {
+  color: #9f9f9f;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  text-decoration: underline;
+}
+
+.box-left {
+  float: left;
+}
+
+.box-right {
+  float: right;
+}
+
+.txt-left {
+  text-align: left;
+}
+
+.txt-right {
+  text-align: right;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.ml10 {
+  margin-left: 10px !important;
+}
+
+.mr10 {
+  margin-right: 10px !important;
+}
+
+.ml15 {
+  margin-left: 15px !important;
+}
+
+.mr15 {
+  margin-right: 15px !important;
+}
+
+.ml20 {
+  margin-left: 20px !important;
+}
+
+.mr20 {
+  margin-right: 20px !important;
+}
+
+.ml25 {
+  margin-left: 25px !important;
+}
+
+.mr25 {
+  margin-right: 25px !important;
+}
+
+.ml30 {
+  margin-left: 30px !important;
+}
+
+.mr30 {
+  margin-right: 30px !important;
+}
+
+.ml35 {
+  margin-left: 35px !important;
+}
+
+.mr35 {
+  margin-right: 35px !important;
+}
+
+.ml40 {
+  margin-left: 40px !important;
+}
+
+.mr40 {
+  margin-right: 40px !important;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  /* 水色 */
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  margin: 1em 0;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+img {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   レイアウト
+   ========================================================================== */
+/**
+ * 外枠
+ * .l-wrapper
+ */
+.l-wrapper {
+  width: 1020px;
+  margin: 0 auto;
+  padding: 94px 0 0;
+}
+
+@media (max-width: 1024px) {
+  .l-wrapper {
+    width: 96%;
+    padding: 30px 0 0;
+  }
+}
+@media (max-width: 420px) {
+  .l-wrapper {
+    padding: 20px 0 0;
+  }
+}
+/**
+ * ヘッダー
+ * .l-header
+ */
+.l-header {
+  margin: 0 0 30px 0;
+  padding: 0 0 0 40px;
+}
+.l-header h1 {
+  float: left;
+}
+.l-header .sns {
+  float: right;
+  margin: 20px 40px 0 0;
+}
+
+@media (max-width: 1024px) {
+  .l-header {
+    padding: 0;
+  }
+  .l-header h1 {
+    float: none;
+    text-align: center;
+  }
+  .l-header .sns {
+    display: none;
+    visibility: hidden;
+  }
+}
+@media (max-width: 420px) {
+  .l-header h1 {
+    position: relative;
+    margin: 20px 0 0 0;
+  }
+}
+/**
+ * グローバルナビゲーション
+ * .l-gnav
+ */
+.l-gnav {
+  padding: 0 0 12px 40px;
+  border-bottom: 3px #656565 solid;
+}
+.l-gnav .gnav {
+  float: left;
+  margin: 2px 0 0 0;
+}
+.l-gnav .search {
+  float: right;
+  margin: 0 40px 0 0;
+}
+
+@media (max-width: 1024px) {
+  .l-gnav {
+    padding: 0 0 12px 0;
+  }
+  .l-gnav .gnav {
+    float: none;
+  }
+  .l-gnav .search {
+    float: left;
+    width: 173px;
+    margin: 18px 0 0 0;
+  }
+
+  .l-search-tablet {
+    width: 413px;
+    margin: 0 auto;
+  }
+  .l-search-tablet .sns-tablet {
+    display: block;
+    float: left;
+    width: 230px;
+    visibility: visible;
+  }
+  .l-search-tablet .sns-tablet dt {
+    display: none;
+    visibility: hidden;
+  }
+}
+@media (max-width: 420px) {
+  .l-gnav {
+    padding: 0;
+    border: none;
+  }
+  .l-gnav .search {
+    float: none;
+    margin: 18px auto 0;
+  }
+
+  .l-search-tablet {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0 0 12px 0;
+    border-bottom: 3px #656565 solid;
+  }
+  .l-search-tablet .sns-tablet {
+    float: none;
+    margin: 1em auto;
+  }
+}
+/**
+ * メイン
+ * .l-main
+ */
+.l-main {
+  background-image: url(../img/bg-item01.png);
+  background-repeat: repeat-x;
+  width: 940px;
+  margin: 78px auto 0;
+}
+
+@media (max-width: 1024px) {
+  .l-main {
+    width: 98%;
+  }
+}
+@media (max-width: 420px) {
+  .l-main {
+    position: relative;
+  }
+}
+.l-entry-main {
+  padding: 0 0 30px 0;
+  border-bottom: 3px #e7e7e7 solid;
+}
+
+.l-gellery {
+  background-image: url(../img/bg-item01.png);
+  background-repeat: repeat-x;
+  background-position: left bottom;
+}
+
+/**
+ * メイン下部
+ * .l-bottom
+ */
+.l-bottom {
+  background-image: url(../img/bg-logo.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  margin: 0 0 80px 0;
+}
+
+.l-2divide-left {
+  float: left;
+  width: 48%;
+  padding: 0 4% 0 0;
+}
+
+.l-2divide-right {
+  float: right;
+  width: 48%;
+}
+
+.l-awi-ceremony-pic {
+  position: relative;
+}
+.l-awi-ceremony-pic .share-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+@media (max-width: 720px) {
+  .l-bottom {
+    padding: 0 0 20px 0;
+    margin: 0 0 60px 0;
+  }
+
+  .l-2divide-left {
+    float: none;
+    width: 100%;
+    padding: 0;
+  }
+
+  .l-2divide-right {
+    float: none;
+    width: 100%;
+  }
+}
+/**
+ * フッター
+ * .l-footer
+ */
+.l-footer {
+  padding: 0 40px;
+  border-top: 3px #6d6d6d solid;
+}
+
+.l-3divide {
+  float: left;
+  width: 300px;
+  margin: 0 20px 0 0;
+}
+
+@media (max-width: 1024px) {
+  .l-footer {
+    padding: 0;
+  }
+
+  .l-3divide {
+    float: none;
+    width: 98%;
+    margin: 0;
+  }
+}
+@media (max-width: 1024px) {
+  .l-footer {
+    position: relative;
+  }
+}
+/* ==========================================================================
+   各種（モジュール）
+   ========================================================================== */
+/**
+ * SNS
+ * .sns
+ */
+.sns dt {
+  float: left;
+  margin: 8px 12px 0 0;
+  letter-spacing: .2em;
+  color: #9f9f9f;
+}
+.sns dd {
+  float: left;
+  margin: 0 0 0 15px;
+}
+
+.sns-tablet {
+  display: none;
+  visibility: hidden;
+}
+
+/**
+ * グロナビ
+ * .gnav
+ */
+.gnav-btn {
+  display: none;
+  visibility: hidden;
+}
+
+.gnav li {
+  float: left;
+  margin: 0 34px 0 0;
+  font-size: 1.28571em;
+  letter-spacing: .2em;
+}
+.gnav li.current a {
+  color: #2a292c;
+}
+.gnav a {
+  color: #838383;
+}
+.gnav a:link {
+  text-decoration: none;
+}
+.gnav a:visited {
+  text-decoration: none;
+}
+.gnav a:hover {
+  color: #2a292c;
+  text-decoration: none;
+}
+.gnav a:active {
+  color: #2a292c;
+  text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .gnav {
+    text-align: center;
+  }
+  .gnav li {
+    display: inline-block;
+    float: none;
+    margin: 0 34px 10px 0;
+  }
+}
+@media (max-width: 420px) {
+  .gnav-btn {
+    display: block;
+    visibility: visible;
+    position: relative;
+    top: 0;
+  }
+  .gnav-btn button {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .gnav-btn .is-gnav-btn {
+    color: #ccc;
+  }
+
+  .gnav {
+    position: absolute;
+    width: 180px;
+    top: 20px;
+    left: -180px;
+    text-align: left;
+  }
+  .gnav li {
+    display: block;
+    margin: 0 0 10px 0;
+  }
+  .gnav li a {
+    display: block;
+    width: 170px;
+    padding: 0 0 0 10px;
+  }
+}
+/**
+ * 検索
+ * .search
+ */
+.search {
+  padding: 4px;
+  border: 1px #e7e7e7 solid;
+}
+.search .search-box {
+  width: 140px;
+  border: none;
+}
+.search .search-btn {
+  position: relative;
+  top: 1px;
+}
+
+/**
+ * タイトル、パラグラフ
+ */
+.s-title {
+  padding: 40px 0 20px 0;
+  font-size: 1.71429em;
+  font-weight: normal;
+  letter-spacing: .2em;
+}
+
+.b-border01 {
+  background-image: url(../img/bg-item01.png);
+  background-repeat: repeat-x;
+  background-position: left bottom;
+}
+
+.s2-title {
+  background-image: url(../img/bg-item01.png);
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  margin: 0 0 40px 0;
+  padding: 56px 0 18px 0;
+  font-size: 1.28571em;
+  font-weight: normal;
+  letter-spacing: .2em;
+}
+
+.paragraph01 {
+  margin: 34px 0 40px 0;
+  text-transform: uppercase;
+}
+
+/**
+ * メインエントリー
+ * .entry-main
+ */
+.entry-main .entry-main-txt {
+  float: right;
+  width: 220px;
+  padding: 0 0 0 20px;
+}
+.entry-main .entry-main-love-btn {
+  margin: 0 0 1em 0;
+}
+.entry-main .entry-main-love-btn li {
+  float: left;
+  margin: 0 8px 0 0;
+}
+.entry-main .entry-main-pic-outer {
+  width: 700px;
+}
+.entry-main #entry-main-pic img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.entry-main #entry-main-pic .owl-prev, .entry-main #entry-main-pic .owl-next {
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  border-radius: 0;
+  text-indent: -9999px;
+}
+.entry-main #entry-main-pic .owl-prev {
+  position: absolute;
+  top: 436px;
+  left: 714px;
+  background-image: url(../img/btn-arrow-left.png);
+}
+.entry-main #entry-main-pic .owl-next {
+  position: absolute;
+  top: 436px;
+  left: 904px;
+  background-image: url(../img/btn-arrow-right.png);
+}
+
+@media (max-width: 1024px) {
+  .entry-main .entry-main-txt {
+    display: table;
+    float: none;
+    width: 100%;
+    padding: 0;
+  }
+  .entry-main .entry-main-love-btn-outer {
+    display: table-footer-group;
+  }
+  .entry-main .entry-main-love-btn {
+    text-align: center;
+  }
+  .entry-main .entry-main-love-btn li {
+    display: inline-block;
+    float: none;
+    margin: 0 20px;
+  }
+  .entry-main .entry-main-pic-outer {
+    width: 100%;
+  }
+  .entry-main #entry-main-pic .owl-prev,
+  .entry-main #entry-main-pic .owl-next {
+    position: static;
+    margin: 5px 20px;
+  }
+}
+/**
+ * ギャラリー
+ * .gallery-item
+ */
+.gallery-item {
+  float: left;
+  position: relative;
+  width: 48%;
+  margin: 0 0 1em 0;
+}
+.gallery-item .gallery-item-title,
+.gallery-item .gallery-item-txt {
+  padding: 0 0 0 238px;
+}
+.gallery-item .gallery-item-pic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+.gallery-item .gallery-item-pic img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gallery-item-pr {
+  padding: 0 4% 0 0;
+}
+
+@media (max-width: 1024px) {
+  .gallery-item {
+    margin: 0 0 2em 0;
+  }
+  .gallery-item .gallery-item-title,
+  .gallery-item .gallery-item-txt {
+    padding: 0;
+  }
+  .gallery-item .gallery-item-pic {
+    position: static;
+  }
+}
+@media (max-width: 420px) {
+  .gallery-item {
+    float: none;
+    width: 100%;
+  }
+
+  .gallery-item-pr {
+    padding: 0;
+  }
+}
+/**
+ * セレモニー
+ * .awi-ceremony-pic
+ */
+.awi-ceremony-pic {
+  margin: 0;
+}
+.awi-ceremony-pic img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.share-btn .share-btn-navi {
+  display: block;
+  float: left;
+  background-image: url(../img/btn-arrow-up.png);
+  background-repeat: no-repeat;
+  background-position: 84px center;
+  background-color: rgba(255, 255, 255, 0.45);
+  width: 100px;
+  height: 36px;
+  padding: 14px 0 0 20px;
+  color: #fff;
+  letter-spacing: .2em;
+  text-decoration: none;
+}
+.share-btn .share-btn-navi:visited {
+  text-decoration: none;
+}
+.share-btn .share-btn-navi:hover {
+  text-decoration: underline;
+}
+.share-btn .share-btn-navi:active {
+  text-decoration: underline;
+}
+.share-btn .is-share-btn-navi-down {
+  background-image: url(../img/btn-arrow-down.png);
+}
+.share-btn .share-btn-choose {
+  float: left;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 174px;
+  height: 44px;
+  margin: 0;
+  padding: 6px 0 0 30px;
+}
+.share-btn .share-btn-choose li {
+  float: left;
+  margin: 0 16px 0 0;
+}
+
+@media (max-width: 720px) {
+  .share-btn .share-btn-choose {
+    width: 162px;
+    padding: 6px 0 0 16px;
+  }
+}
+/**
+ * 招待フォーム
+ * .inviteform
+ */
+.inviteform .inviteform-text {
+  width: 98%;
+  margin: 0 0 6px 0;
+  padding: 12px 1%;
+  border: 1px #e7e7e7 solid;
+}
+.inviteform .inviteform-submit {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 131px;
+  height: 29px;
+  border: none;
+  color: #fff;
+  letter-spacing: .1em;
+  border-radius: 4px;
+}
+.inviteform .is-inviteform-submit {
+  background-color: black;
+}
+
+/**
+ * フッター
+ * .l-footer
+ */
+.menu-list {
+  letter-spacing: .1em;
+}
+.menu-list a:link {
+  text-decoration: none;
+}
+.menu-list a:hover {
+  text-decoration: underline;
+}
+.menu-list a:visited {
+  text-decoration: none;
+}
+.menu-list a:active {
+  text-decoration: underline;
+}
+
+.copyright {
+  clear: both;
+  padding: 116px 0 10px 0;
+}
+
+@media (max-width: 1024px) {
+  .menu-list .menu-list-item:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+  .menu-list li {
+    float: left;
+    margin: 0 20px 10px 0;
+  }
+}
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Image replacement
+ */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+}
+.ie6 .ir, .ie7 .ir {
+  text-indent: -9999px;
+}
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * blockskip
+ */
+.blockskip {
+  z-index: 9999;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.ie6 .blockskip {
+  position: relative;
+}
+.blockskip a {
+  display: block;
+  float: left;
+  background: #838383;
+  width: 100%;
+  /*	min-width: 980px; */
+  height: 1px;
+  margin: -1px 0 0 0;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.07143em;
+  color: #333;
+  line-height: 0;
+  cursor: default;
+  overflow: hidden;
+}
+.blockskip a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.blockskip a.show {
+  color: #fff;
+  /* height: 1em; */
+  height: auto;
+  margin-top: -3px;
+  padding: 5px 0;
+  font-size: 1em;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before, .clearfix:after,
+.l-header:before,
+.l-header:after,
+.l-gnav:before,
+.l-gnav:after,
+.gnav:before,
+.gnav:after,
+.l-search-tablet:before,
+.l-search-tablet:after,
+.sns:before,
+.sns:after,
+.entry-main:before,
+.entry-main:after,
+.entry-main-love-btn:before,
+.entry-main-love-btn:after,
+.l-gellery:before,
+.l-gellery:after,
+.l-bottom:before,
+.l-bottom:after,
+.share-btn:before,
+.share-btn:after,
+.l-footer:before,
+.l-footer:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.clearfix:after,
+.l-header:after,
+.l-gnav:after,
+.gnav:after,
+.l-search-tablet:after,
+.sns:after,
+.entry-main:after,
+.entry-main-love-btn:after,
+.l-gellery:after,
+.l-bottom:after,
+.share-btn:after,
+.l-footer:after {
+  clear: both;
+}
+.ie6 .clearfix, .ie7 .clearfix, .ie6
+.l-header, .ie7
+.l-header, .ie6
+.l-gnav, .ie7
+.l-gnav, .ie6
+.gnav, .ie7
+.gnav, .ie6
+.l-search-tablet, .ie7
+.l-search-tablet, .ie6
+.sns, .ie7
+.sns, .ie6
+.entry-main, .ie7
+.entry-main, .ie6
+.entry-main-love-btn, .ie7
+.entry-main-love-btn, .ie6
+.l-gellery, .ie7
+.l-gellery, .ie6
+.l-bottom, .ie7
+.l-bottom, .ie6
+.share-btn, .ie7
+.share-btn, .ie6
+.l-footer, .ie7
+.l-footer {
+  /* For IE 6/7 only Include this rule to trigger hasLayout and contain floats. */
+  zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+@media print {
+  * {
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  /*
+   * Don't show links for images, or javascript/internal links
+   */
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+}
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
