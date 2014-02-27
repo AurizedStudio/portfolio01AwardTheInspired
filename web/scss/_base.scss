@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+// Font設定関数
+@function r-size($size,$context,$unit:em) {
+	@return #{$size/$context}$unit;
+}
+// 透明度
+@mixin opacity($opacity) {
+	opacity: $opacity;
+	$opacityIE: $opacity * 100;
+	filter: alpha(opacity=$opacityIE);
+}
+// 画像
+@mixin img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+// Hide from both screenreaders and browsers
+@mixin hidden {
+	display: none;
+	visibility: hidden;
+}
+@mixin visible {
+	display: block;
+	visibility: visible;
+}
+
+// グローバル変数
+$width: 1020px;
+$width-main: 940px;
+$color01: #838383; // ベース文字カラー
+$break-tablet: 1024px; // ブレイクポイント１
+$break-midium: 720px; // ブレイクポイント２
+$break-small: 420px; // ブレイクポイント３
+
+html,
+button,
+input,
+select,
+textarea {
+	color: $color01;
+}
+
+body {
+	background-color: #fff;
+	font-size: r-size(14,16);
+	line-height: (20 / 14);
+}
+a {
+	color: #9f9f9f;
+	&:link {
+	}
+	&:visited {
+	}
+	&:hover {
+		text-decoration: underline;
+	}
+	&:active {
+		text-decoration: underline;
+	}
+}
+.box-left	{float: left;}
+.box-right	{float: right;}
+.txt-left	{text-align: left;}
+.txt-right	{text-align: right;}
+.txt-center	{text-align: center;}
+
+$margin-value: 10;
+@while $margin-value <= 40 {
+	.ml#{$margin-value}{
+		margin-left: $margin-value + px!important;
+	}
+	.mr#{$margin-value}{
+		margin-right: $margin-value + px!important;
+	}
+	$margin-value: $margin-value + 5;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+::selection {
+    background: #b3d4fc; /* 水色 */
+    text-shadow: none;
+}
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+    display: block;
+    height: 1px;
+    margin: 1em 0;
+    padding: 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+img {
+	vertical-align: middle;
+}
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+	resize: vertical;
+}
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+.chromeframe {
+	margin: 0.2em 0;
+	background: #ccc;
+	color: #000;
+	padding: 0.2em 0;
+}

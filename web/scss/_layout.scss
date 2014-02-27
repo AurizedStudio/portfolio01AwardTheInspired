@@ -1,0 +1,222 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   レイアウト
+   ========================================================================== */
+/**
+ * 外枠
+ * .l-wrapper
+ */
+.l-wrapper {
+	width: $width;
+	margin: 0 auto;
+	padding: 94px 0 0;
+}
+@media ( max-width: $break-tablet ) {
+.l-wrapper {
+	width: 96%;
+	padding: 30px 0 0;
+}
+}
+@media ( max-width: $break-small ) {
+.l-wrapper {
+	padding: 20px 0 0;
+}
+}
+/**
+ * ヘッダー
+ * .l-header
+ */
+.l-header {
+	margin: 0 0 30px 0;
+	padding: 0 0 0 40px;
+	h1 {
+		float: left;
+	}
+	.sns {
+		float: right;
+		margin: 20px (($width - $width-main) / 2) 0 0;
+	}
+}
+@media ( max-width: $break-tablet ) {
+.l-header {
+	padding: 0;
+	h1 {
+		float: none;
+		text-align: center;
+	}
+	.sns {
+		@include hidden;
+	}
+}
+}
+@media ( max-width: $break-small ) {
+.l-header {
+	h1 {
+		position: relative;
+		margin: 20px 0 0 0;
+	}
+}
+}
+/**
+ * グローバルナビゲーション
+ * .l-gnav
+ */
+.l-gnav {
+	padding: 0 0 12px 40px;
+	border-bottom: 3px #656565 solid;
+	.gnav {
+		float: left;
+		margin: 2px 0 0 0;
+	}
+	.search {
+		float: right;
+		margin: 0 (($width - $width-main) / 2) 0 0;
+	}
+}
+@media ( max-width: $break-tablet ) {
+.l-gnav {
+	padding: 0 0 12px 0;
+	.gnav {
+		float: none;
+	}
+	.search {
+		float: left;
+		width: 173px;
+		margin: 18px 0 0 0;
+	}
+}
+.l-search-tablet {
+	width: 413px;
+	margin: 0 auto;
+	.sns-tablet {
+		display: block;
+		float: left;
+		width: 230px;
+		visibility: visible;
+		dt {
+			@include hidden;
+		}
+	}
+}
+}
+@media ( max-width: $break-small ) {
+.l-gnav {
+	padding: 0;
+	border: none;
+	.search {
+		float: none;
+		margin: 18px auto 0;
+	}
+}
+.l-search-tablet {
+	position: relative;
+	width: 100%;
+	margin: 0;
+	padding: 0 0 12px 0;
+	border-bottom: 3px #656565 solid;
+	.sns-tablet {
+		float: none;
+		margin: 1em auto;
+	}
+}
+}
+/**
+ * メイン
+ * .l-main
+ */
+.l-main {
+	background-image: url(../img/bg-item01.png);
+	background-repeat: repeat-x;
+	width: $width-main;
+	margin: 78px auto 0;
+}
+@media ( max-width: $break-tablet ) {
+	.l-main {
+		width: 98%;
+	}
+}
+@media ( max-width: $break-small ) {
+	.l-main {
+		position: relative;
+	}
+}
+.l-entry-main {
+	padding: 0 0 30px 0;
+	border-bottom: 3px #e7e7e7 solid;
+}
+.l-gellery {
+	background-image: url(../img/bg-item01.png);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+}
+/**
+ * メイン下部
+ * .l-bottom
+ */
+.l-bottom {
+	background-image: url(../img/bg-logo.png);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	margin: 0 0 80px 0;
+}
+.l-2divide-left {
+	float: left;
+	width: 48%;
+	padding: 0 4% 0 0;
+}
+.l-2divide-right {
+	float: right;
+	width: 48%;
+}
+.l-awi-ceremony-pic {
+	position: relative;
+	.share-btn {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+}
+@media ( max-width: $break-midium ) {
+.l-bottom {
+	padding: 0 0 20px 0;
+	margin: 0 0 60px 0;
+}
+.l-2divide-left {
+	float: none;
+	width: 100%;
+	padding: 0;
+}
+.l-2divide-right {
+	float: none;
+	width: 100%;
+}
+}
+/**
+ * フッター
+ * .l-footer
+ */
+.l-footer {
+	padding: 0 40px;
+ 	border-top: 3px #6d6d6d solid;
+}
+.l-3divide {
+	float: left;
+	width: 300px;
+	margin: 0 20px 0 0;
+}
+@media ( max-width: $break-tablet ) {
+.l-footer {
+	padding: 0;
+}
+.l-3divide {
+	float: none;
+	width: 98%;
+	margin: 0;
+}
+}
+@media ( max-width: $break-tablet ) {
+.l-footer {
+	position: relative;
+}
+}

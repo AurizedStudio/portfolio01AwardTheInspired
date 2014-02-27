@@ -1,0 +1,398 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   各種（モジュール）
+   ========================================================================== */
+/**
+ * SNS
+ * .sns
+ */
+.sns {
+	dt {
+		float: left;
+		margin: 8px (27px - 15px) 0 0;
+		letter-spacing: .2em;
+		color: #9f9f9f;
+	}
+	dd {
+		float: left;
+		margin: 0 0 0 15px;
+	}
+}
+.sns-tablet {
+	@include hidden;
+}
+/**
+ * グロナビ
+ * .gnav
+ */
+.gnav-btn {
+	@include hidden;
+}
+.gnav {
+	li {
+		float: left;
+		margin: 0 34px 0 0;
+		font-size: r-size(18,14);
+		letter-spacing: .2em;
+		&.current a {
+			color: #2a292c;
+		}
+	}
+	a {
+		color: $color01;
+		&:link {
+			text-decoration: none;
+		}
+		&:visited {
+			text-decoration: none;
+		}
+		&:hover {
+			color: #2a292c;
+			text-decoration: none;
+		}
+		&:active {
+			color: #2a292c;
+			text-decoration: none;
+		}
+	}
+}
+@media ( max-width: $break-tablet ) {
+.gnav {
+	text-align: center;
+	li {
+		display: inline-block;
+		float: none;
+		margin: 0 34px 10px 0;
+	}
+}
+}
+@media ( max-width: $break-small ) {
+.gnav-btn {
+	@include visible;
+	position: relative;
+	top: 0;
+	button {
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	}
+	.is-gnav-btn {
+		color: #ccc;
+	}
+}
+.gnav {
+	position: absolute;
+	width: 180px; // slideMove
+	top: 20px;
+	left: -180px; // slideMove
+	text-align: left;
+	li {
+		display: block;
+		margin: 0 0 10px 0;
+		a {
+			display: block;
+			width: 180px - 10px; // slideMove
+			padding: 0 0 0 10px;
+		}
+	}
+}
+}
+/**
+ * 検索
+ * .search
+ */
+.search {
+	padding: 4px;
+	border: 1px #e7e7e7 solid;
+	.search-box {
+		width: 140px;
+		border: none;
+	}
+	.search-btn {
+		position: relative;
+		top: 1px;
+//		width: 14px;
+//		height: 14px;
+	}
+}
+/**
+ * タイトル、パラグラフ
+ */
+.s-title {
+	padding: 40px 0 20px 0;
+	font-size: r-size(24,14);
+	font-weight: normal;
+	letter-spacing: .2em;
+}
+.b-border01 {
+	background-image: url(../img/bg-item01.png);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+}
+.s2-title {
+	background-image: url(../img/bg-item01.png);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+	margin: 0 0 40px 0;
+	padding: 56px 0 18px 0;
+	font-size: r-size(18,14);
+	font-weight: normal;
+	letter-spacing: .2em;
+}
+.paragraph01 {
+	margin: 34px 0 40px 0;
+	text-transform: uppercase;
+}
+/**
+ * メインエントリー
+ * .entry-main
+ */
+.entry-main {
+	.entry-main-txt {
+		float: right;
+		width: $width-main - 700px - 20px;
+		padding: 0 0 0 20px;
+	}
+	.entry-main-love-btn {
+		margin: 0 0 1em 0;
+		li {
+			float: left;
+			margin: 0 8px 0 0;
+		}
+	}
+	.entry-main-pic-outer {
+		width: 700px;
+	}
+	#entry-main-pic {
+		img {
+			@include img;
+		}
+		%arrow {
+			background-repeat: no-repeat;
+			background-position: 0 0;
+			width: 25px;
+			height: 25px;
+			padding: 0;
+			border-radius: 0;
+			text-indent: -9999px;
+		}
+		.owl-prev {
+			position: absolute;
+			top: 436px;
+			left: 714px;
+			background-image: url(../img/btn-arrow-left.png);
+			@extend %arrow;
+		}
+		.owl-next {
+			position: absolute;
+			top: 436px;
+			left: 904px;
+			background-image: url(../img/btn-arrow-right.png);
+			@extend %arrow;
+		}
+	}
+}
+@media ( max-width: $break-tablet ) {
+.entry-main {
+//	display: table;
+//	width: 100%;
+	.entry-main-txt {
+		display: table;
+		float: none;
+		width: 100%;
+		padding: 0;
+	}
+	.entry-main-love-btn-outer {
+		display: table-footer-group;
+	}
+	.entry-main-love-btn {
+		text-align: center;
+		li {
+			display: inline-block;
+			float: none;
+			margin: 0 20px;
+		}
+	}
+	.entry-main-pic-outer {
+		width: 100%;
+	}
+	#entry-main-pic {
+//		display: table-header-group;
+		.owl-prev,
+		.owl-next {
+			position: static;
+			margin: 5px 20px;
+		}
+	}
+}
+}
+/**
+ * ギャラリー
+ * .gallery-item
+ */
+.gallery-item {
+	float: left;
+	position: relative;
+	width: 48%;
+	margin: 0 0 1em 0;
+	.gallery-item-title,
+	.gallery-item-txt {
+		padding: 0 0 0 238px;
+	}
+	.gallery-item-pic {
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin: 0;
+		img {
+			@include img;
+		}
+	}
+}
+.gallery-item-pr {
+	padding: 0 4% 0 0;
+}
+@media ( max-width: $break-tablet ) {
+.gallery-item {
+	margin: 0 0 2em 0;
+	.gallery-item-title,
+	.gallery-item-txt {
+		padding: 0;
+	}
+	.gallery-item-pic {
+		position: static;
+	}
+}
+}
+@media ( max-width: $break-small ) {
+.gallery-item {
+	float: none;
+	width: 100%;
+}
+.gallery-item-pr {
+	padding: 0;
+}
+}
+/**
+ * セレモニー
+ * .awi-ceremony-pic
+ */
+.awi-ceremony-pic {
+	margin: 0;
+	img {
+		@include img;
+	}
+}
+.share-btn {
+	.share-btn-navi {
+		display: block;
+		float: left;
+		background-image: url(../img/btn-arrow-up.png);
+		background-repeat: no-repeat;
+		background-position: 84px center;
+		background-color: rgba(255,255,255,.45);
+		width: 120px - 20px;
+		height: 50px - 14px;
+		padding: 14px 0 0 20px;
+		color: #fff;
+		letter-spacing: .2em;
+		text-decoration: none;
+		&:visited {
+			text-decoration: none;
+		}
+		&:hover {
+			text-decoration: underline;
+		}
+		&:active {
+			text-decoration: underline;
+		}
+	}
+	.is-share-btn-navi-down {
+		background-image: url(../img/btn-arrow-down.png);
+	}
+	.share-btn-choose {
+		float: left;
+		background-color: rgba(255,255,255,.3);
+		width: 204px - 30px;
+		height: 50px - 6px;
+		margin: 0;
+		padding: 6px 0 0 30px;
+		li {
+			float: left;
+			margin: 0 16px 0 0;
+		}
+	}
+}
+@media ( max-width: $break-midium ) {
+.share-btn {
+	.share-btn-choose {
+		width: 162px;
+		padding: 6px 0 0 16px;
+	}
+}
+}
+/**
+ * 招待フォーム
+ * .inviteform
+ */
+.inviteform {
+	.inviteform-text {
+		width: 100% - 2%;
+		margin: 0 0 6px 0;
+		padding: 12px 1%;
+		border: 1px #e7e7e7 solid;
+	}
+	.inviteform-submit {
+		display: block;
+		background-color: rgba(0,0,0,.7);
+		width: 131px;
+		height: 29px;
+		border: none;
+		color: #fff;
+		letter-spacing: .1em;
+		border-radius: 4px;
+	}
+	.is-inviteform-submit {
+		background-color: rgba(0,0,0,1);
+	}
+}
+/**
+ * フッター
+ * .l-footer
+ */
+.menu-list {
+	letter-spacing: .1em;
+	a {
+		&:link {
+			text-decoration: none;
+		}
+		&:hover {
+			text-decoration: underline;
+		}
+		&:visited {
+			text-decoration: none;
+		}
+		&:active {
+			text-decoration: underline;
+		}
+	}
+}
+.copyright {
+	clear: both;
+	padding: 116px 0 10px 0;
+}
+@media ( max-width: $break-tablet ) {
+.menu-list {
+	.menu-list-item {
+		&:after {
+			content: " ";
+			display: table;
+			clear: both;
+		}
+	}
+	li {
+		float: left;
+		margin: 0 20px 10px 0;
+	}
+}
+}
